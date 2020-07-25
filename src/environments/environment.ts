@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyBD1wErrTfC19UmMEuY1i2615Tn1dD3IhA',
+    authDomain: 'purple-tv.firebaseapp.com',
+    databaseURL: 'https://purple-tv.firebaseio.com',
+    projectId: 'purple-tv',
+    storageBucket: 'purple-tv.appspot.com',
+    messagingSenderId: '138168470201',
+    appId: '1:138168470201:web:0ae1262bccfc5a15a5a968',
+    measurementId: 'G-87WHVKGLET'
+  }
 };
 
 /*
