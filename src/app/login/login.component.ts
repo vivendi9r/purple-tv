@@ -8,13 +8,26 @@ import {AngularFireAuth} from '@angular/fire/auth';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _af: AngularFireAuth) { }
+  constructor(private _af: AngularFireAuth) {
+    _af.authState.subscribe(res => {
+      console.log(res);
+      if (res && res.uid) {
+        console.log('log in as: ', res.displayName ? res.displayName : res.email ? res.email : 'unknown user');
+      } else {
+        console.log('log out');
+      }
+    });
+  }
 
   ngOnInit() {
   }
 
   loginWithGoogle() {
-    console.log('login with google');
     this._af.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    // this._af.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  logOut() {
+    this._af.signOut();
   }
 }
