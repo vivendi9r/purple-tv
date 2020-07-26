@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
       console.log(res);
       if (res && res.uid) {
         console.log('log in as: ', res.displayName ? res.displayName : res.email ? res.email : 'unknown user');
+        // todo: add redirect to homepage component
       } else {
         console.log('log out');
       }

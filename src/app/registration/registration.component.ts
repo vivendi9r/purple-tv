@@ -11,7 +11,7 @@ export class RegistrationComponent implements OnInit {
 
   form = new FormGroup({
     email: new FormControl('', [ Validators.email, Validators.required]),
-    password: new FormControl('', [Validators.minLength(7), Validators.required]),
+    password: new FormControl('', [Validators.minLength(5), Validators.required]),
     confirmPassword: new FormControl('', Validators.required)
   }, this.passwordsShouldMatch);
 
@@ -34,11 +34,10 @@ export class RegistrationComponent implements OnInit {
    passwordsShouldMatch(control: AbstractControl): ValidationErrors | null {
     const password = control.get('password');
     const confirmPassword = control.get('confirmPassword');
-    console.log(password);
     if (password.value !== confirmPassword.value) {
-        return {passwordsShouldMatch: true};
+        return { passwordsShouldMatch: true };
     } else {
-        return {passwordsShouldMatch: null};
+        return { passwordsShouldMatch: null };
     }
 }
 
