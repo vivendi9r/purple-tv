@@ -41,4 +41,12 @@ export class RegistrationComponent implements OnInit {
     }
 }
 
+onSubmit() {
+  if (this.form.valid) {
+    console.log('form is valid');
+  } else {
+    this.form.markAllAsTouched();
+  }
+}
+
 }

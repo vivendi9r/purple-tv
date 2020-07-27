@@ -1,30 +1,28 @@
 <div id="grad">
-  <!--  todo: translate all to polish-->
   <div class="container" id="container">
     <div class="form-container log-in-container">
       <form action="#">
-        <h1>Login</h1>
+        <h1>Zaloguj się</h1>
         <div class="social-container">
-<!--          TODO: ADD SOCIAL ICONS -->
-          <a href="#" class="social">fb</a>
-          <a href="#" class="social" (click)="loginWithGoogle()">google</a>
+         <img class="social" src="../../assets/social/17639236_1785253958471956_282550797298827264_n.png"
+         (click)="FacebookAuth()">
+          <img class="social" src="../../assets/social/btn_google_signin_light_normal_web@2x.png"
+            (click)="loginWithGoogle()">
         </div>
-        <span>or use your account</span>
+        <span>lub użyj konta Purple.tv</span>
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <a href="#">Forgot your password?</a>
-        <button (click)="logOut()">Log In</button>
+        <a href="#">Zapomniałeś hasła?</a>
+        <button (click)="logOut()">Zaloguj się</button>
       </form>
     </div>
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-right">
           <h1>PURPLE TV</h1>
-          <p>Darmowa telewizja internetowa umożliwiająca bezpłatne oglądanie, ocenianie i komentowanie filmów.  </p>
+          <p>Darmowa telewizja internetowa umożliwiająca bezpłatne oglądanie, ocenianie i komentowanie filmów. </p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-

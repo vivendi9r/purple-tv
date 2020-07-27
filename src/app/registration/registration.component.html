@@ -1,15 +1,8 @@
 <div id="grad">
-<!--  todo: translate all to polish-->
     <div class="container" id="container">
       <div class="form-container log-in-container">
-        <form action="#" [formGroup]="form">
-          <h1>Registration</h1>
-<!--          TODO: remove social links div and 'or create new account' span + repair view (add space between 'Registration' and inputs)-->
-          <div class="social-container">
-            <a href="#" class="social">fb</a>
-            <a href="#" class="social" (click)="loginWithGoogle()">google</a>
-          </div>
-          <span>or create new account</span>
+        <form action="#" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <h1>Zarejestruj się</h1>
           <input formControlName="email" [ngClass]="{'inputError': email.touched && email.invalid}" type="email" placeholder="Email" />
           <div class="validationError" *ngIf="email.touched && email.invalid">Email jest wymagany.</div>
           <input formControlName="password" [ngClass]="{'inputError': password.invalid && password.touched}" type="password" placeholder="Password" />
@@ -18,9 +11,8 @@
           <input formControlName="confirmPassword" [ngClass]="{'inputError': confirmPassword.invalid && confirmPassword.touched}" type="password" placeholder="Confirm your password" />
           <div class='validationError' *ngIf="confirmPassword.invalid && confirmPassword.touched && !confirmPassword.value">To pole jest wymagane.</div>
           <div class="validationError" *ngIf="confirmPassword.valid && form.errors.passwordsShouldMatch && form.invalid && confirmPassword.touched">Hasła muszą być identyczne.</div>
-          <a href="#">You already have account?</a>
-<!--          TODO: add validation after click button 'Submit'-->
-          <button>Submit</button>
+          <a href="#">Już posiadasz konto?</a>
+          <button type="submit" >Zarejestruj</button>
         </form>
       </div>
       <div class="overlay-container">

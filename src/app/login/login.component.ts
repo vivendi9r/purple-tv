@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { auth } from 'firebase/app';
 import * as firebase from 'firebase';
 import {AngularFireAuth} from '@angular/fire/auth';
 @Component({
@@ -8,7 +9,10 @@ import {AngularFireAuth} from '@angular/fire/auth';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _af: AngularFireAuth) {
+  constructor(
+    private _af: AngularFireAuth,
+    public afAuth: AngularFireAuth) {
+
     _af.authState.subscribe(res => {
       console.log(res);
       if (res && res.uid) {
@@ -21,6 +25,19 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  FacebookAuth() {
+    return this.AuthLogin(new auth.FacebookAuthProvider());
+  }
+
+  AuthLogin(provider) {
+    return this.afAuth.signInWithPopup(provider)
+    .then((result) => {
+        console.log('You have been successfully logged in!')
+    }).catch((error) => {
+        console.log(error);
+    });
   }
 
   loginWithGoogle() {
