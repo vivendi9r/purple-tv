@@ -11,7 +11,7 @@
           <input formControlName="confirmPassword" [ngClass]="{'inputError': confirmPassword.invalid && confirmPassword.touched}" type="password" placeholder="Confirm your password" />
           <div class='validationError' *ngIf="confirmPassword.invalid && confirmPassword.touched && !confirmPassword.value">To pole jest wymagane.</div>
           <div class="validationError" *ngIf="confirmPassword.valid && form.errors.passwordsShouldMatch && form.invalid && confirmPassword.touched">Hasła muszą być identyczne.</div>
-          <a href="#">Już posiadasz konto?</a>
+          <a routerLink="/login">Już posiadasz konto?</a>
           <button type="submit" >Zarejestruj</button>
         </form>
       </div>

@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "purple-tv"
+  "defaultProject": "purple-tv",
+  "cli": {
+    "analytics": false
+  }
 }

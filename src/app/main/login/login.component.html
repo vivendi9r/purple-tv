@@ -4,15 +4,18 @@
       <form action="#">
         <h1>Zaloguj się</h1>
         <div class="social-container">
-         <img class="social" src="../../assets/social/17639236_1785253958471956_282550797298827264_n.png"
-         (click)="FacebookAuth()">
-          <img class="social" src="../../assets/social/btn_google_signin_light_normal_web@2x.png"
-            (click)="loginWithGoogle()">
+         <button (click)="FacebookAuth()" class="loginBtn loginBtn--facebook">
+          Zaloguj przez Facebook
+        </button>
+        <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
+          Zaloguj przez Google
+        </button>
         </div>
         <span>lub użyj konta Purple.tv</span>
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <a href="#">Zapomniałeś hasła?</a>
+        <a routerLink="#">Zapomniałeś hasła?</a>
+        <a routerLink="/register">Nie masz konta? Zarejestuj się!</a>
         <button (click)="logOut()">Zaloguj się</button>
       </form>
     </div>
