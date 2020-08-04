@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { auth } from 'firebase/app';
 import * as firebase from 'firebase';
 import {AngularFireAuth} from '@angular/fire/auth';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,43 +11,41 @@ import {AngularFireAuth} from '@angular/fire/auth';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(
-    private _af: AngularFireAuth,
-    public afAuth: AngularFireAuth) {
+  constructor(private _af: AngularFireAuth,
+              private router: Router) {}
 
-    _af.authState.subscribe(res => {
-      console.log(res);
+  ngOnInit() {
+    this.redirectIfLogIn();
+  }
+
+  redirectIfLogIn(): void {
+    this._af.authState.subscribe(res => {
       if (res && res.uid) {
-        console.log('log in as: ', res.displayName ? res.displayName : res.email ? res.email : 'unknown user');
-        // todo: add redirect to homepage component
+        this.router.navigateByUrl('/');
       } else {
-        console.log('log out');
+        this.router.navigateByUrl('/login');
       }
     });
   }
 
-  ngOnInit() {
+  loginWithFacebook() {
+    return this.authLogin(new auth.FacebookAuthProvider());
   }
 
-  FacebookAuth() {
-    return this.AuthLogin(new auth.FacebookAuthProvider());
-  }
-
-  AuthLogin(provider) {
-    return this.afAuth.signInWithPopup(provider)
+  authLogin(provider) {
+    return this._af.signInWithPopup(provider)
     .then((result) => {
-        console.log('You have been successfully logged in!')
+      if (result) {
+        this.redirectIfLogIn();
+      }
     }).catch((error) => {
         console.log(error);
     });
   }
 
   loginWithGoogle() {
-    this._af.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    return this.authLogin(new firebase.auth.GoogleAuthProvider());
+    // this._af.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
     // this._af.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-  }
-
-  logOut() {
-    this._af.signOut();
   }
 }

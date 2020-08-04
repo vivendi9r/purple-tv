@@ -4,7 +4,7 @@
       <form action="#">
         <h1>Zaloguj się</h1>
         <div class="social-container">
-         <button (click)="FacebookAuth()" class="loginBtn loginBtn--facebook">
+         <button (click)="loginWithFacebook()" class="loginBtn loginBtn--facebook">
           Zaloguj przez Facebook
         </button>
         <button (click)="loginWithGoogle()" class="loginBtn loginBtn--google">
@@ -16,7 +16,7 @@
         <input type="password" placeholder="Password" />
         <a routerLink="#">Zapomniałeś hasła?</a>
         <a routerLink="/register">Nie masz konta? Zarejestuj się!</a>
-        <button (click)="logOut()">Zaloguj się</button>
+        <button>Zaloguj się</button>
       </form>
     </div>
     <div class="overlay-container">
