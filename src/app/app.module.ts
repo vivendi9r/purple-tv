@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './main/login/login.component';
-import {environment} from '../environments/environment';
-import { RegistrationComponent } from './main/registration/registration.component';
+import { LoginComponent } from './main/auth/login/login.component';
+import { environment } from '../environments/environment';
+import { RegistrationComponent } from './main/auth/registration/registration.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomepageComponent } from './main/homepage/homepage.component';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AboutUsComponent } from './main/about-us/about-us.component';
+import { ContactComponent } from './main/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomepageComponent,
     LoginComponent,
     RegistrationComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegistrationComponent,
+    ContactComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

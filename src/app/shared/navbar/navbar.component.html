@@ -1,0 +1,19 @@
+<div class="navbar">
+    <header>
+        <img class="logo" src="../../../assets/logo/Purple_Lagoon_logo.png">
+        <nav>
+            <ul class="nav__links">
+                <li><a>Programy</a></li>
+                <li><a>Blog</a></li>
+                <li><a>Kontakt</a></li>
+                <li><a>O nas</a></li>
+                </ul>
+        </nav>
+        <div>
+            <a class="login" routerLink="/login">Zaloguj się</a>
+            <a *ngIf="true" class="login" (click)="logOut()" routerLink="/login">Wyloguj się</a>
+            <a class="login" routerLink="/register">Rejestracja</a>
+        </div>
+</header>
+</div>
+
