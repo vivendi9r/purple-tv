@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
               private _authService: AuthService) {}
 
   ngOnInit() {
-    this._authService.redirectIfLogIn();
+    this._authService.setCurrentUser();
   }
 
   loginWithFacebook() {

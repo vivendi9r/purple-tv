@@ -33,8 +33,12 @@ import { ContactComponent } from './main/contact/contact.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomepageComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegistrationComponent },
+      { path: 'zaloguj', component: LoginComponent },
+      { path: 'rejestracja', component: RegistrationComponent },
+      { path: 'tv', component: HomepageComponent },
+      { path: 'blog', component: HomepageComponent },
+      { path: 'kontakt', component: ContactComponent },
+      { path: 'o-nas', component: AboutUsComponent },
       { path: '**', component: HomepageComponent }
     ])
   ],

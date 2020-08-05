@@ -6,7 +6,6 @@
     padding: 0;
 }
 
-
 .navbar {
     margin: -8px;
     background-color: #eadcff;
@@ -54,7 +53,6 @@ header {
     padding: 0 20px;
 }
 .nav__links li a {
-
     transition: all 0.3s ease 0s;
     cursor: pointer;
 }
@@ -62,7 +60,7 @@ header {
 .nav__links li a:hover {
    color: #eadcff;
 }
-.login {
+.navbar-text {
     color: white;
     font-family: 'Montserrat', sans-serif;
     padding: 9px 15px;

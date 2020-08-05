@@ -3,16 +3,17 @@
         <img class="logo" src="../../../assets/logo/Purple_Lagoon_logo.png">
         <nav>
             <ul class="nav__links">
-                <li><a>Programy</a></li>
-                <li><a>Blog</a></li>
-                <li><a>Kontakt</a></li>
-                <li><a>O nas</a></li>
-                </ul>
+                <li routerLink="/tv"><a>Programy</a></li>
+                <li routerLink="/blog"><a>Blog</a></li>
+                <li routerLink="/kontakt"><a>Kontakt</a></li>
+                <li routerLink="/o-nas"><a>O nas</a></li>
+            </ul>
         </nav>
         <div>
-            <a class="login" routerLink="/login">Zaloguj się</a>
-            <a *ngIf="true" class="login" (click)="logOut()" routerLink="/login">Wyloguj się</a>
-            <a class="login" routerLink="/register">Rejestracja</a>
+            <a *ngIf="!currentUser" class="navbar-text" routerLink="/zaloguj">Zaloguj się</a>
+            <span *ngIf="currentUser" class="navbar-text">Witaj, {{currentUser.displayName ? currentUser.displayName : currentUser.email}}</span>
+            <a *ngIf="currentUser" class="navbar-text" (click)="logOut()" routerLink="/zaloguj">Wyloguj się</a>
+            <a *ngIf="!currentUser" class="navbar-text" routerLink="/rejestracja">Rejestracja</a>
         </div>
 </header>
 </div>
