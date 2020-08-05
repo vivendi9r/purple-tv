@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
       if (res && res.uid) {
         this.router.navigateByUrl('/');
       } else {
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/zaloguj');
       }
     });
   }

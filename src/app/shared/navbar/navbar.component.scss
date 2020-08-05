@@ -19,6 +19,9 @@ li, a {
     font-size: 15px;
     text-decoration: none;
     font-weight: 600;
+    &:focus{
+      outline: none;
+    }
 }
 
 header {

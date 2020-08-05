@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut() {
+    localStorage.removeItem('currentUser');
     this._af.signOut();
   }
 }
